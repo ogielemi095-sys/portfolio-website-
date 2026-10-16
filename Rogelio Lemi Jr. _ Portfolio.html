@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rogelio Lemi Jr. | Aspiring Web Developer</title>
+<style>
+:root{--bg:#f7f8fc;--surface:#fff;--text:#1b1f33;--muted:#5d6480;--accent:#4f46e5;--accent2:#06b6d4;--border:#e2e5f0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1220;--surface:#181c30;--text:#eef0fa;--muted:#a3a9c6;--accent:#8b85ff;--accent2:#22d3ee;--border:#2a2f4a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1220;--surface:#181c30;--text:#eef0fa;--muted:#a3a9c6;--accent:#8b85ff;--accent2:#22d3ee;--border:#2a2f4a;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;line-height:1.65}
+a{color:var(--accent)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--border)}
+nav{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:12px}
+.logo{font-weight:700;font-size:1.1rem;text-decoration:none;color:var(--text)}
+.links{display:flex;gap:18px;align-items:center}
+.links a{text-decoration:none;color:var(--muted);font-size:.95rem}
+.links a:hover{color:var(--accent)}
+button{font:inherit;cursor:pointer}
+.icon-btn{background:none;border:1px solid var(--border);color:var(--text);border-radius:8px;padding:4px 10px}
+#menu{display:none}
+section{max-width:1000px;margin:auto;padding:70px 20px 30px}
+h2{font-size:1.8rem;margin:0 0 6px}
+h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin-top:8px}
+.sub{color:var(--muted);margin:0 0 26px}
+#home{min-height:80vh;display:flex;flex-direction:column;justify-content:center}
+.hello{color:var(--accent);font-weight:600;margin:0}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.1;margin:8px 0 14px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:600px;color:var(--muted);font-size:1.1rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:11px 22px;border-radius:10px;text-decoration:none;font-weight:600;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:#fff}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.facts{list-style:none;padding:0;margin:0}
+.facts li{padding:8px 0;border-bottom:1px solid var(--border)}
+.facts li:last-child{border:0}
+.facts b{display:inline-block;min-width:110px}
+.timeline{border-left:3px solid var(--accent);padding-left:20px}
+.timeline h3{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:999px;font-weight:500}
+.chip.tech{border-color:var(--accent);color:var(--accent)}
+.shot{aspect-ratio:16/9;border-radius:10px;border:2px dashed var(--border);display:grid;place-items:center;color:var(--muted);text-align:center;padding:10px;margin-bottom:16px;overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:cover}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit}
+footer{text-align:center;color:var(--muted);padding:40px 20px;font-size:.9rem}
+.reveal{opacity:0;transform:translateY(20px);transition:.6s}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:640px){
+ .links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surface);flex-direction:column;padding:16px;border-bottom:1px solid var(--border)}
+ .links.open{display:flex}
+ #menu{display:block}
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+ <a class="logo" href="#home">Rogelio<span style="color:var(--accent)">.dev</span></a>
+ <div class="links" id="links">
+  <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  <button class="icon-btn" id="theme" aria-label="Toggle theme">🌓</button>
+ </div>
+ <button class="icon-btn" id="menu" aria-label="Menu">☰</button>
+</nav>
+</header>
+
+<main>
+<section id="home">
+ <p class="hello">Hello, welcome to my portfolio 👋</p>
+ <h1>Hi! I'm <span>Rogelio Lemi Jr.</span></h1>
+ <p class="lead">An aspiring web developer and 2nd year Bachelor of Science in Information Technology student who enjoys learning new technologies and creating websites.</p>
+ <div class="cta"><a class="btn primary" href="#projects">View My Project</a><a class="btn" href="#contact">Contact Me</a></div>
+</section>
+
+<section id="about" class="reveal">
+ <h2>About Me</h2><p class="sub">A little about who I am.</p>
+ <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+  <div class="card">
+   <p style="margin-top:0">I am a student who is passionate about technology, web design, and programming. I want to improve my skills and gain experience in web development, and I'm always excited to build something new.</p>
+   <p style="margin-bottom:0"><b>Career goal:</b> to become a professional Web Developer.</p>
+  </div>
+  <div class="card">
+   <ul class="facts">
+    <li><b>Age</b> 19 years old</li>
+    <li><b>Location</b> Gonzaga, Cagayan</li>
+    <li><b>School</b> Cagayan State University – Gonzaga Campus</li>
+    <li><b>Course</b> BS Information Technology</li>
+    <li><b>Interests</b> Coding, Gaming, Running &amp; Walking</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="education" class="reveal">
+ <h2>Education</h2><p class="sub">My academic background.</p>
+ <div class="timeline card">
+  <h3>Bachelor of Science in Information Technology</h3>
+  <p style="margin:4px 0"><b>Cagayan State University – Gonzaga Campus</b></p>
+  <p style="margin:4px 0;color:var(--muted)">Currently 2nd Year College</p>
+  <p style="margin:10px 0 0;color:var(--muted)">Trainings / Certificates: None yet — currently focused on building my skills through coursework and projects.</p>
+ </div>
+</section>
+
+<section id="skills" class="reveal">
+ <h2>Skills</h2><p class="sub">Things I know and am currently learning.</p>
+ <h3>Technical</h3>
+ <div class="chips">
+  <span class="chip tech">HTML</span><span class="chip tech">CSS</span><span class="chip tech">JavaScript</span><span class="chip tech">C#</span><span class="chip tech">Java</span><span class="chip tech">Microsoft Word</span><span class="chip tech">PowerPoint</span>
+ </div>
+ <h3 style="margin-top:24px">Soft Skills</h3>
+ <div class="chips"><span class="chip">Communication</span><span class="chip">Teamwork</span><span class="chip">Problem-solving</span></div>
+</section>
+
+<section id="projects" class="reveal">
+ <h2>Projects</h2><p class="sub">Work samples I've created.</p>
+ <div class="card" style="max-width:640px">
+  <!-- To add your screenshot: replace this div's content with <img src="screenshot.png" alt="Registrar Query Management System"> -->
+  <div class="shot">📷 Screenshot of the project goes here</div>
+  <h3 style="margin:0 0 6px">Registrar Query Management System</h3>
+  <p style="color:var(--muted)">A web-based system that helps students submit queries and requests to the registrar's office, and helps staff organize and respond to them more efficiently.</p>
+  <div class="chips"><span class="chip tech">JavaScript</span><span class="chip tech">HTML</span><span class="chip tech">CSS</span></div>
+ </div>
+</section>
+
+<section id="contact" class="reveal">
+ <h2>Contact</h2><p class="sub">Let's get in touch.</p>
+ <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+  <div class="card">
+   <p style="margin-top:0">Feel free to reach out for collaborations, questions, or opportunities.</p>
+   <p>📧 <a href="mailto:titaniumvgaming8@gmail.com">titaniumvgaming8@gmail.com</a></p>
+   <p style="margin-bottom:0">📍 Gonzaga, Cagayan, Philippines</p>
+  </div>
+  <div class="card">
+   <div>
+    <label for="name">Your name</label><input id="name" type="text">
+    <label for="msg">Message</label><textarea id="msg" rows="4"></textarea>
+    <button class="btn primary" id="send" style="margin-top:14px">Send via Email</button>
+    <p id="note" style="color:var(--muted);margin:10px 0 0;font-size:.9rem"></p>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> Rogelio Lemi Jr. — Built with HTML, CSS &amp; JavaScript</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const links=document.getElementById('links');
+document.getElementById('menu').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+const root=document.documentElement;
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+document.getElementById('theme').onclick=()=>{
+ const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+ root.dataset.theme=dark?'light':'dark';
+ try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
+};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('send').onclick=()=>{
+ const n=document.getElementById('name').value.trim(),m=document.getElementById('msg').value.trim();
+ const note=document.getElementById('note');
+ if(!n||!m){note.textContent='Please fill in your name and message.';return}
+ location.href='mailto:titaniumvgaming8@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m);
+ note.textContent='Opening your email app...';
+};
+</script>
+</body>
+</html>
